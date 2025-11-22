@@ -1,0 +1,147 @@
+.similar-products {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #e2e8f0;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+}
+
+.similar-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.similar-product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .product-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+
+    a {
+      display: block;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      color: white;
+      background: #10b981;
+    }
+  }
+
+  .product-info {
+    padding: 16px;
+
+    .product-category {
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .product-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 8px;
+      line-height: 1.3;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          color: #3b82f6;
+        }
+      }
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 8px;
+
+      .stars {
+        display: flex;
+        gap: 1px;
+      }
+
+      .rating-text {
+        font-size: 11px;
+        color: #64748b;
+      }
+    }
+
+    .product-price {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      .current-price {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1e293b;
+      }
+
+      .original-price {
+        font-size: 12px;
+        color: #64748b;
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .similar-products {
+    margin-top: 40px;
+    padding-top: 30px;
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  .similar-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .similar-product-card .product-image {
+    height: 150px;
+  }
+}
